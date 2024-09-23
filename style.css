@@ -1,22 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  height: 100%;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   padding: 10px;
-  background: gray;
+  background: #918585;
   gap: 10px;
+}
+.dark-theme .wrapper {
+  background: #333333;
 }
 
 .main-container {
   flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -24,17 +33,48 @@
 
 .sidebar {
   width: 200px;
-  height: 100%;
   padding: 20px;
-  background: white;
+  background: #9daa9f;
 }
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   height: 80px;
-  padding: 20px;
-  background: white;
+  padding: 20px 15px;
+  background: #9daa9f;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.header-search {
+  flex: 1;
+  height: 50px;
+  padding-left: 20px;
+  font-weight: 30px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.header-button {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.header-button:hover {
+  background: #c1c5c2;
 }
 
 .footer {
@@ -43,43 +83,79 @@
   height: 80px;
   margin-top: auto;
   padding: 20px;
-  background: white;
+  background: #9daa9f;
+  color: #494747;
+  font-size: small;
 }
 
 .content {
+  padding-right: 10px;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.large-cards_column, .small-cards_column {
-  display: flex;
-  justify-content: left;
-  align-items: start;
   flex-wrap: wrap;
   gap: 10px;
-}
-.large-cards_column {
-  width: 50%;
-}
-.small-cards_column {
-  width: 50%;
-  align-items: start;
+  width: 100%;
+  justify-content: space-between; /* Чтобы выравнивать элементы по левому краю */
+  overflow-y: scroll;
 }
 
-.large-card {
+.card {
   display: flex;
   flex-direction: column;
-  width: 150px;
-  height: 120px;
-  padding: 20px;
-  background: white;
+  width: 200px; /* Фиксированная ширина для карточек */
+  height: 280px;
+  padding: 10px 16px;
+  background: #CFEAD5;
+  margin-bottom: 10px;
+  flex-shrink: 0; /* Запретить уменьшение размера */
 }
-.small-card {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  height: 90px;
-  padding: 16px;
-  background: white;
+
+.card-image {
+  width: 100%;
+}
+
+.card-title {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 9.41px;
+}
+
+.card-shop {
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 17px;
+}
+
+.card-price {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* Стили для переключателя темы */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Для общих стилей полосы прокрутки */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина вертикальной полосы прокрутки */
+  
+}
+/* Стиль захвата полосы прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+  cursor: grab;
+}
+/* Стиль для области, где не захвачено "пальцем" */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+/* Добавьте стили для при наведении, если необходимо */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Цвет "пальца" при наведении */
 }
