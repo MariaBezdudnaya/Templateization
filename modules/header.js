@@ -2,7 +2,7 @@ import Element from "../constructor/Element.js";
 import content from "./content.js";
 
 const logo = new Element('img', 'logo').get();
-logo.src = '../img/logo.png';
+logo.src = './img/logo.png';
 
 const search = new Element('input', 'header-search').get();
 search.placeholder = 'Введите поисковый запрос..';
